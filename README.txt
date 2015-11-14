@@ -1,3 +1,6 @@
+/*
+	BEST PRACTICES STRUCTURE
+*/
 app/
 ----- shared/   // acts as reusable components or partials of our site
 ---------- sidebar/
@@ -25,6 +28,7 @@ assets/
 ----- libs/     // Third-party libraries such as jQuery, Moment, Underscore, etc.
 index.html // access to login
 
+/* END OF BEST EXAMPLE STRUCTURES */
 
 /*
 	"PROJECT" MAIN FOLDER
