@@ -45,15 +45,23 @@ project		// All the project
 ---- SHAdmin 	// Superhost website to admin
 ---- SHAppWebMobile 	// Superhost application web/mobile (no include yet)
 
-/*
-	"SGWebsite" folder
-*/
-index.html
-js 		// javascript files
-img 	// images
-css 	// css
+/* "SGWebsite" folder */
+View "SGWebsite\README_SGWebsite.TXT"
 
-/* 
-	"SGAppWebMobile" folder
-*/
+/* "SGAppWebMobile" folder */
+View "SHAppWebMobile\README_SHAppWebMobile.TXT"
 
+/* "api" folder */
+View "api\README_api.TXT"
+
+/* "static" folder */
+View "static\README_static.TXT"
+
+/* "SHWebsite" folder */
+View "SHWebsite\README_SHWebsite.TXT"
+
+/* "SHAdmin" folder */
+View "SHAdmin\README_SHWebsite.TXT"
+
+/* "SHAppWebMobile" folder */
+View "SHAppWebMobile\README_SHAppWebMobile.TXT"
