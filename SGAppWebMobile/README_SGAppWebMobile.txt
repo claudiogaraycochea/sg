@@ -23,4 +23,7 @@ app 	// Full application web mobile
 assets
 ---- css/	// Styles css
 ---- img/	// Images used in app
----- js/	// Javascript 
+---- js/	// Javascript
+-------- app.js // Main app to services
+-------- angular.js // Angular used in all application
+-------- jquery-1.11.3.min.js // JQuery used in all application
