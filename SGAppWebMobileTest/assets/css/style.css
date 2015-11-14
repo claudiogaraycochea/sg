@@ -48,10 +48,10 @@ body {
 }
 
 .wrapper-content {
-  background-color: red;
   z-index: 1;
   position: relative;
   top: 60px;
+  height: 100vh;
 }
 
 .float-left {
@@ -156,4 +156,8 @@ body {
 .wrapper-aside ul li{
   margin: 0;
   padding: 10px;
+}
+
+.right-space {
+  margin-right: 10px;
 }
