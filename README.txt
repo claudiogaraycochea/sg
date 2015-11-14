@@ -24,3 +24,32 @@ assets/
 ----- js/       // JavaScript files written for your app that are not for angular
 ----- libs/     // Third-party libraries such as jQuery, Moment, Underscore, etc.
 index.html // access to login
+
+
+/*
+	"PROJECT" MAIN FOLDER
+
+	THIS IS THE FULL PROJECT SUPERGUEST/SUPERHOST BETWEEN OTHERS.
+
+*/
+project		// All the project
+---- SGWebsite 		// Superguest website to public access
+---- SGAppWebMobile 	// Aplication web/mobile
+---- api 	// Server for api (nodejs/mongodb)
+---- static		// Server for images upload per users
+---- SHWebsite		// Superhost website to public access 
+---- SHAdmin 	// Superhost website to admin
+---- SHAppWebMobile 	// Superhost application web/mobile (no include yet)
+
+/*
+	"SGWebsite" folder
+*/
+index.html
+js 		// javascript files
+img 	// images
+css 	// css
+
+/* 
+	"SGAppWebMobile" folder
+*/
+
