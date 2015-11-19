@@ -5,19 +5,21 @@ function targetModule(){
   $(function(){
     var src=pathBase+'app/system/module/moduleView.html';
     //$('<iframe id="targetURL" src="'+src+'" class="target-URL hidden"/>').appendTo('body');
-    $('<iframe id="targetURL" src="'+src+'" class="target-URL"/>').appendTo('body');
+    $('<iframe id="targetURL" src="'+src+'" class="target-URL hidden"/>').appendTo('body');
     $('.target-URL').animate({left: 1000}, 400, function() {});
   });
 }
 
 function openModule(link){
   $('.wrapper-aside').animate({left: "-=80%"}, 300, function() {});
-  //$('#targetURL').removeClass("hidden");
+  $('#targetURL').removeClass("hidden");
   $('.target-URL').animate({left: 0}, 400, function() {});
 }
 
 function closeModule(){
-  $('.target-URL').animate({left: 1000}, 400, function() {});
+  $('.target-URL').animate({left: 1000}, 400, function() {
+    $('#targetURL').addClass("hidden");
+  });
 }
 
 function redefineTarget(){
@@ -62,7 +64,6 @@ function redefineTarget(){
 
 $(document).ready(function(){
   redefineTarget();
-
 
   $('.btn-icon-menu').on('click', function () {
     $('.wrapper-aside').animate({left: "+=80%"}, 300, function() {});
