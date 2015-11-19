@@ -16,6 +16,10 @@ function openModule(link){
   $('.target-URL').animate({left: 0}, 400, function() {});
 }
 
+function closeModule(){
+  $('.target-URL').animate({left: 1000}, 400, function() {});
+}
+
 function redefineTarget(){
   targetModule();
   

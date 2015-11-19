@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<script>
+window.location.hash="no-back-button";
+window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+window.onhashchange=function(){window.location.hash="no-back-button";}
+</script> 
 <head>
   <meta charset="UTF-8">
   <meta name="robots" content="noindex">
@@ -9,15 +14,7 @@
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/app.js"></script>
 
-  <script>
-   window.onbeforeunload = function() {
 
-      return '';
-   };
-
-  window.confirm = function (){ } 
-
-  </script>
 </head>
 <body>
   <div class="wrapper-main">
