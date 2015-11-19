@@ -8,6 +8,16 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/app.js"></script>
+
+  <script>
+   window.onbeforeunload = function() {
+
+      return '';
+   };
+
+  window.confirm = function (){ } 
+
+  </script>
 </head>
 <body>
   <div class="wrapper-main">
@@ -25,7 +35,7 @@
     <!-- Wrapper content -->
     <content class="wrapper-content">
       <div class="scrollable">
-        <p> Content </p>
+        <p> Content2 </p>
         <p> Content </p>
         <p> Content </p>
         <p> Content </p>
@@ -80,7 +90,7 @@
       </div>
     </content>
 
-    <aside class="wrapper-aside hidden">
+    <aside class="wrapper-aside">
       GUIDE
       <ul>
         <li><i class="icon-home"></i> Home</li>

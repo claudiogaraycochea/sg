@@ -1,15 +1,24 @@
-pathBase='http://localhost/superguest/project/SGAppWebMobileTest/';
+//pathBase='http://localhost/superguest/project/SGAppWebMobileTest/';
+pathBase='http://192.168.1.34/superguest/project/SGAppWebMobileTest/';
 
-function targetURL(){
+function targetModule(){
   $(function(){
     var src=pathBase+'app/system/module/moduleView.html';
+    //$('<iframe id="targetURL" src="'+src+'" class="target-URL hidden"/>').appendTo('body');
     $('<iframe id="targetURL" src="'+src+'" class="target-URL"/>').appendTo('body');
+    $('.target-URL').animate({left: 1000}, 400, function() {});
   });
 }
 
-function redefineTarget(){
-  targetURL();
+function openModule(link){
+  $('.wrapper-aside').animate({left: "-=80%"}, 300, function() {});
+  //$('#targetURL').removeClass("hidden");
+  $('.target-URL').animate({left: 0}, 400, function() {});
+}
 
+function redefineTarget(){
+  targetModule();
+  
   $('a').on('click', function(event) {
     event.preventDefault();
     /*
@@ -33,7 +42,7 @@ function redefineTarget(){
         alert('abre MODAL '+link);
         break;
       case 'module':
-        alert('abre MODULE '+link);
+        openModule(link);
         break;
       case 'url':
         var link=pathBase+"/app/components/"+link

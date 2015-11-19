@@ -25,6 +25,7 @@ body {
   background-image: url("../img/bg.png");
   background-size: 100%;
   background-position: fixed;
+  overflow-x: hidden;
 }
 
 .wrapper-main {
@@ -32,6 +33,7 @@ body {
   width: 100%;
   max-width: 990px;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .wrapper-header {
@@ -53,12 +55,14 @@ body {
   top: 60px;
   bottom: 0px;
   left: 0px;
+
 }
 
 .wrapper-content .scrollable {
   height: 100%;
   width: 100%;
   overflow: auto;
+  
 }
 
 .float-left {
@@ -151,6 +155,7 @@ body {
   padding: 20px;
   font-size: 1.2em;
   overflow: auto;
+
 }
 
 .wrapper-aside ul {
@@ -178,4 +183,8 @@ body {
   border: 0px solid;
   width: 100%;
   height: 100vh;
+}
+
+.hidden {
+  display: none;
 }
