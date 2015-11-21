@@ -1,27 +1,76 @@
+//pathBase='http://localhost/superguest/project/SGAppWebMobileTest/';
+pathBase='http://192.168.1.34/superguest/project/SGAppWebMobileTest/';
+
+function targetModule(){
+  $(function(){
+    var src=pathBase+'app/system/module/moduleView.html';
+    //$('<iframe id="targetURL" src="'+src+'" class="target-URL hidden"/>').appendTo('body');
+    $('<iframe id="targetURL" src="'+src+'" class="target-URL hidden"/>').appendTo('body');
+    $('.target-URL').animate({left: 1000}, 400, function() {});
+  });
+}
+
+function openModule(link){
+  $('.wrapper-aside').animate({left: "-=80%"}, 300, function() {});
+  $('#targetURL').removeClass("hidden");
+  $('.target-URL').animate({left: 0}, 400, function() {});
+}
+
+function closeModule(){
+  $('.target-URL').animate({left: 1000}, 400, function() {
+    $('#targetURL').addClass("hidden");
+  });
+}
+
+function redefineTarget(){
+  targetModule();
+  
+  $('a').on('click', function(event) {
+    event.preventDefault();
+    /*
+      This function is used to open a link
+      
+      target:
+        - modal   // open a modal with link 
+            eg:
+             <a href="reserve" target="modal"> 
+
+        - module    // open a module
+        - url   // open a url external
+
+
+    */
+    var link = $(this).attr('href'); 
+    var target = $(this).attr('target');
+
+    switch(target) {
+      case 'modal':
+        alert('abre MODAL '+link);
+        break;
+      case 'module':
+        openModule(link);
+        break;
+      case 'url':
+        var link=pathBase+"/app/components/"+link
+        alert(link);
+        window.open(link);
+        break;
+      default:
+        window.open(link);
+    }
+
+  });
+}
 
 $(document).ready(function(){
-    $('a[href^="#"]').on('click', function(event) {
-        var link = $(this).attr('href');
-        var tar = $(this).attr('tar');
-        alert('open link'+link+' / target '+tar);
-    });
+  redefineTarget();
 
-
-    $('.menu').on('click', function () {
-      if ($('.l-site').hasClass('is-open')) {
-          $('.menu').removeClass('is-active');
-          $('.l-site').removeClass('is-open');
-      } else {
-          $('.menu').addClass('is-active');
-          $('.l-site').addClass('is-open');
-      }
-    });
-    
-    $('.nav a').on('click', function () {
-        if ($('.l-site').hasClass('is-open')) {
-            $('.menu').removeClass('is-active');
-            $('.l-site').removeClass('is-open');
-        }
-    });
+  $('.btn-icon-menu').on('click', function () {
+    $('.wrapper-aside').animate({left: "+=80%"}, 300, function() {});
+  });
+  
+  $('.wrapper-content').on('click', function () {
+    $('.wrapper-aside').animate({left: "-=80%"}, 300, function() {});
+  });
 
 });

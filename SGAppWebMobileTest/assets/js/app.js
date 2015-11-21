@@ -1,23 +1,25 @@
 //pathBase='http://localhost/superguest/project/SGAppWebMobileTest/';
-pathBase='http://192.168.1.34/superguest/project/SGAppWebMobileTest/';
+pathBase='http://192.168.1.36/superguest/project/SGAppWebMobileTest/';
 
 function targetModule(){
   $(function(){
     var src=pathBase+'app/system/module/moduleView.html';
     //$('<iframe id="targetURL" src="'+src+'" class="target-URL hidden"/>').appendTo('body');
     $('<iframe id="targetURL" src="'+src+'" class="target-URL hidden"/>').appendTo('body');
-    $('.target-URL').animate({left: 1000}, 400, function() {});
+    $('.target-URL').animate({left: 1000}, 300, function() {});
   });
 }
 
 function openModule(link){
-  $('.wrapper-aside').animate({left: "-=80%"}, 300, function() {});
-  $('#targetURL').removeClass("hidden");
-  $('.target-URL').animate({left: 0}, 400, function() {});
+  $('.wrapper-aside').animate({left: "-=80%"}, 300, function() {
+    $('#targetURL').removeClass("hidden");
+    $('.target-URL').animate({left: 0}, 300, function() {});
+  });
+
 }
 
 function closeModule(){
-  $('.target-URL').animate({left: 1000}, 400, function() {
+  $('.target-URL').animate({left: 1000}, 300, function() {
     $('#targetURL').addClass("hidden");
   });
 }

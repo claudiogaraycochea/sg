@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<script>
+window.location.hash="no-back-button";
+window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+window.onhashchange=function(){window.location.hash="no-back-button";}
+</script> 
 <head>
   <meta charset="UTF-8">
   <meta name="robots" content="noindex">
@@ -8,35 +13,98 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/app.js"></script>
+
+
 </head>
 <body>
   <div class="wrapper-main">
-    <div class="l-site">
-      <div class="l-nav">
-        <nav class="nav">
-          <ul>
-            <li class="nav-primary"><a href="home">Home</a></li>
-            <li class="nav-primary"><a href="#signup">Neighborhood</a></li>
-            <li class="nav-primary"><a href="#login">City</a></li>
-          </ul>
-        </nav>
+
+    <!-- Header -->
+    <header class="wrapper-header">
+      <div class="float-left"><i class="icon-menu btn-icon-menu"></i></div>
+      <div class="float-right">
+        <span class="right-space"><i class="icon-points"></i></span>
+        <i class="icon-user"></i>
       </div>
-      <div class="menu">
-        <div class="menu-hamburger"></div>
+      <div class="clearfix"></div>
+    </header>
+
+    <!-- Wrapper content -->
+    <content class="wrapper-content">
+      <div class="scrollable">
+        <p> Content2 </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
+        <p> Content </p>
       </div>
-      <div class="l-page">
-        <a name="home"></a>
-        <section class="band band-a">
-          <div class="band-container">
-            <div class="band-inner">
-              <p class="banner title">
-                Title
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
+    </content>
+
+    <aside class="wrapper-aside">
+      GUIDE
+      <ul>
+        <li><i class="icon-home"></i> Home</li>
+        <li><i class="icon-neighborhood"></i> Neighborhood</li>
+        <li><i class="icon-city"></i> City</li>
+      </ul>
+      OTHERS
+      <ul>
+        <li><i class="icon-pictures"></i> <a href="reserve" target="module">Pictures</a></li>
+        <li><i class="icon-wishlist"></i> <a href="my_wishlist" target="modal">My Wishlist</a></li>
+        <li><i class="icon-shop-online"></i> <a href="shop_online" target="url">Shop Online</a></li>
+        <li><i class="icon-airport-transfer"></i> <a href="http://google.com">Airport Transfer</a></li>
+        <li><i class="icon-rate-us"></i> Rate us</li>
+        <li><i class="icon-settings"></i> Settings</li>
+      </ul>
+    </aside>
+
   </div>
 </body>
 </html>
