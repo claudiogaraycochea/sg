@@ -22,10 +22,13 @@ body {
   padding: 0;
   line-height: 1.5em;
   color: #333;
-  background-image: url("../img/bg.png");
   background-size: 100%;
   background-position: fixed;
   overflow-x: hidden;
+}
+
+.bg-main {
+  background-image: url("../img/bg.png");
 }
 
 .wrapper-main {
@@ -46,6 +49,7 @@ body {
   color: #FFFFFF;
   position:absolute;
   height:60px;
+  font-size: 18px;
 }
 
 .wrapper-content {
@@ -141,6 +145,16 @@ body {
   width: 32px;
   height: 32px;
 }
+.icon-back {
+  background-image: url("../img/icon-back.png");
+  width: 32px;
+  height: 32px;
+}
+.icon-modal-close {
+  background-image: url("../img/icon-modal-close.png");
+  width: 24px;
+  height: 24px;
+}
 
 .wrapper-aside {
   position: fixed;
@@ -155,7 +169,11 @@ body {
   padding: 20px;
   font-size: 1.2em;
   overflow: auto;
+}
 
+.wrapper-aside a{
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 .wrapper-aside ul {
@@ -187,4 +205,25 @@ body {
 
 .hidden {
   display: none;
+}
+
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .5);
+}
+.modal {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+}
+.modal-body {
+  background-color: #FFFFFF;
+  min-height: 100px;
+  padding: 10px;
 }

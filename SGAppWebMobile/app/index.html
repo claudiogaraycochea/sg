@@ -16,7 +16,7 @@ window.onhashchange=function(){window.location.hash="no-back-button";}
 
 
 </head>
-<body>
+<body class="bg-main">
   <div class="wrapper-main">
 
     <!-- Header -->
@@ -87,7 +87,7 @@ window.onhashchange=function(){window.location.hash="no-back-button";}
       </div>
     </content>
 
-    <aside class="wrapper-aside">
+    <aside id="wrapper-aside" class="wrapper-aside">
       GUIDE
       <ul>
         <li><i class="icon-home"></i> Home</li>
@@ -97,14 +97,28 @@ window.onhashchange=function(){window.location.hash="no-back-button";}
       OTHERS
       <ul>
         <li><i class="icon-pictures"></i> <a href="reserve" target="module">Pictures</a></li>
-        <li><i class="icon-wishlist"></i> <a href="my_wishlist" target="modal">My Wishlist</a></li>
-        <li><i class="icon-shop-online"></i> <a href="shop_online" target="url">Shop Online</a></li>
-        <li><i class="icon-airport-transfer"></i> <a href="http://google.com">Airport Transfer</a></li>
+        <li><i class="icon-wishlist"></i> <a href="http://192.168.1.35/superguest/project/SGAppWebMobileTest/app/components/test/testView.html" target="modal">My Wishlist</a></li>
+        <li><i class="icon-shop-online"></i> <a href="http://www.google.com" target="url">Shop Online</a></li>
+        <li><i class="icon-airport-transfer"></i> Airport Transfer</li>
         <li><i class="icon-rate-us"></i> Rate us</li>
         <li><i class="icon-settings"></i> Settings</li>
       </ul>
     </aside>
 
   </div>
+
+  <div id="modal-wrapper" class="modal-bg hidden" >
+    <div class="modal" >
+      <div class="modal-body">
+        <div id="modal-header">
+          <i id="modal-header-close" class="modal-close icon-modal-close float-right"></i>
+        </div>
+        <div id="modal-content">
+        </div>
+      </div>
+    </div> 
+  </div>
+
+
 </body>
 </html>
