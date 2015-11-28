@@ -1,73 +1,98 @@
-pathBase='http://192.168.1.35/superguest/project/SGAppWebMobileTest/';
-//pathBase='http://hiresto.com/sg/';
+pathBase='http://localhost/superguest/project/SGAppWebMobileTest/www/site/';
+//pathBase='http://hiresto.com/sg/site/';
 
-function targetModule(){
-  $(function(){
-    var src=pathBase+'app/system/module/moduleView.html';
-    $('<iframe id="targetURL" src="'+src+'" class="target-URL hidden"/>').appendTo('body');
-    $('.target-URL').animate({left: 1000}, 300, function() {});
-  });
-}
+var sg = {
 
-function openModule(link){
-  $('#wrapper-aside').animate({left: "-=80%"}, 300, function() {
-    $('#targetURL').removeClass("hidden");
-    $('.target-URL').animate({left: 0}, 300, function() {});
-  });
-}
+  init: function(){
+      sg.redefineTargetLink();
+      sg.bindEvents();
+      sg.onDeviceReady();
+  },
 
-function closeModule(){
-  $('.target-URL').animate({left: 1000}, 300, function() {
-    $('#targetURL').addClass("hidden");
-  });
-}
+  /* Functions for module */
 
-function redefineTarget(){
-  targetModule();
-  
-  $('a').on('click', function(event) {
-    event.preventDefault();
-    var link = $(this).attr('href'); 
-    var target = $(this).attr('target');
+  moduleConstructor: function(){
+    $(function(){
+      var src=pathBase+'app/system/module/moduleView.html';
+      $('<iframe id="module-iframe" src="'+src+'" class="module-iframe"/>').appendTo('body');
+    });
+  },
 
-    switch(target) {
-      case 'modal':
-        openModal(link);
-        break;
-      case 'module':
-        openModule(link);
-        break;
-      default:
-        window.open(link);
-    }
+  moduleOpen: function(link){
+    sg.mainMenuClose();
+    $('#module-iframe').addClass('move-left');
+  },
 
-  });
-}
+  moduleClose: function(){
+    $('#module-iframe').removeClass('move-left');
+  },
 
-function openModal(link){
-  if($('#modal-content').load(link)){
-    $('#modal-wrapper').removeClass("hidden");
-  }       
-}
+  /* Functions for modal */
+  modalOpen: function(link){
+    if($('#modal-content').load(link)){
+      $('#modal-wrapper').removeClass('hidden');
+    }       
+  },
 
-function closeModal(){
-  $('#modal-content').html('');
-  $('#modal-wrapper').attr('style','display:none;');
-}
+  modalClose: function(){
+    $('#modal-content').html('');
+    $('#modal-wrapper').addClass('hidden');
+  },
+
+  redefineTargetLink: function(){
+    sg.moduleConstructor();
+    
+    $('a').on('click', function(event) {
+      event.preventDefault();
+      var link = $(this).attr('href'); 
+      var target = $(this).attr('target');
+
+      switch(target) {
+        case 'modal':
+          sg.modalOpen(link);
+          break;
+        case 'module':
+          sg.moduleOpen(link);
+          break;
+        default:
+          window.open(link);
+      }
+
+    });
+  },
+
+  mainMenuOpen: function(){
+    $('#wrapper-aside').addClass('move-right');
+  },
+
+  mainMenuClose: function(){
+    $('#wrapper-aside').removeClass('move-right');
+  },
+      
+  bindEvents: function() {
+    document.addEventListener('deviceready', this.onDeviceReady, false);
+  },
+
+  onDeviceReady: function() {
+    // Ejecutamos la funci—n FastClick, que es la que nos elimina esos 300ms de espera al hacer click
+    new FastClick(document.body);
+  }
+
+};
 
 $(document).ready(function(){
-  redefineTarget();
-
+ 
   $('.btn-icon-menu').on('click', function () {
-    $('#wrapper-aside').animate({left: "+=80%"}, 300, function() {});
+    sg.mainMenuOpen();
   });
   
   $('.wrapper-content').on('click', function () {
-    $('#wrapper-aside').animate({left: "-=80%"}, 300, function() {});
+    sg.mainMenuClose();
   });
 
   $('#modal-header-close').click(function(){
-    $('#modal-wrapper').addClass("hidden");
+    sg.modalClose();
   });
-    
+
+  sg.init();
 });

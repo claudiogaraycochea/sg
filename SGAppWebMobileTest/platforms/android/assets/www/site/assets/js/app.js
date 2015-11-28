@@ -1,5 +1,5 @@
-pathBase='http://localhost/superguest/project/SGAppWebMobileTest/platforms/android/assets/www/site/';
-//pathBase='http://hiresto.com/sg/site/';
+//var pathBase='http://localhost/superguest/project/SGAppWebMobileTest/platforms/android/assets/www/site/';
+pathBase='http://hiresto.com/sg/site/';
 
 var sg = {
 
@@ -21,6 +21,8 @@ var sg = {
   moduleOpen: function(link){
     sg.mainMenuClose();
     $('#module-iframe').addClass('move-left');
+    var link=sg.setLocalVar('linkPostData',link);
+    $('#module-iframe').attr('src',pathBase+'app/system/module/moduleView.html');
   },
 
   moduleClose: function(){
@@ -75,8 +77,29 @@ var sg = {
 
   onDeviceReady: function() {
     new FastClick(document.body); // Execute FastClick, eliminate the 300ms of delay with a click
-  }
+  },
 
+  /* Set cookie */
+  setLocalVar: function(name,value){
+      sessionStorage.setItem(name,value);
+  },
+
+  /* Get cookie */
+  getLocalVar: function(name){
+      return sessionStorage.getItem(name);
+  },
+
+  /* Codifica cadena */
+  encodeString: function(string){
+      var encodedString = btoa(string);
+      return encodedString;
+  },
+
+  /* Decodifica cadena */
+  decodeString: function(encodedString){
+      var decodedString = atob(encodedString);
+      return decodedString;
+  },
 };
 
 $(document).ready(function(){

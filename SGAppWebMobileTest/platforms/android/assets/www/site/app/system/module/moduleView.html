@@ -14,9 +14,21 @@
     window.onhashchange=function(){window.location.hash="no-back-button";}
   </script> 
   <script>  
+    var sg=parent.sg;
     $(document).ready(function(){
+      var linkPostData=sg.getLocalVar('linkPostData');
+      sg.setLocalVar('linkPostData','');
+      $('.wrapper-content').load(linkPostData);
+    /*  if($('.wrapper-content').load('')){
+        alert('abre el contenido');
+      }
+      else {
+        alert('no pudo abrir el contenido');
+      }*/
+
       $('.btn-back').on('click', function () {
-      parent.sg.moduleClose();
+        //parent.sg.moduleClose();
+        sg.moduleClose();
       });
     });  
 
@@ -30,7 +42,7 @@
     </header>
     <content class="wrapper-content">
       <div class="scrollable">
-      <p> Content 3</p>
+      <p> Content 4</p>
       <p> Content </p>
       <p> Content </p>
       <p> Content </p>
